@@ -1,51 +1,81 @@
 .slide-container {
-    height: 30vh;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
+  height: 30vh;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  position: relative;
+  border: solid gray 20px;
+  padding-bottom: 60px;
 }
 
 * {
-    margin: 0px;
+  margin: 0px;
 }
 
 .slide {
-    background-color: aliceblue;
-    height: 100%;
-    width: 20%;
-    img {
-        height: 100%;
-        width: 100%;
-    }
-    animation-name: slide-right;
-    animation-duration: 4s;
-    animation-timing-function: ease-in-out;
+  background-color: aliceblue;
+  height: 100%;
+  width: 20%;
+  img {
+      height: 100%;
+      width: 100%;
+  }
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@keyframes slide-right {
-    // 0% {
-    //     -webkit-transform: translateX(-50px);
-    //             transform: translateX(-50px);
-    //     opacity: 0;
-    //   }
-    // 100% {
-    //     -webkit-transform: translateX(0);
-    //             transform: translateX(0);
-    //     opacity: 1;
-    // }
-    0% {
-        -webkit-transform: translateX(-1000px);
-                transform: translateX(-1000px);
-        opacity: 0;
-      }
-      100% {
-        -webkit-transform: translateX(0);
-                transform: translateX(0);
-        opacity: 1;
-      }
-    
-  }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#right-arrow {
+  position: absolute;
+  right: 25%;
+  top: 40%;
+}
+
+#left-arrow {
+  position: absolute;
+  left: 25%;
+  top: 40%;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.nav {
+  position: absolute;
+  bottom: 3%;
 }

@@ -44,8 +44,22 @@ function previous() {
     }
 }
 
-const nextButton = document.getElementById('next');
-nextButton.addEventListener('click', previous)
+function populateDots() {
+    let slides = document.getElementsByClassName("slide");
+    let nav = document.getElementsByClassName('nav')[0];
+    console.log('hi');
+    for (let x = 0; x < slides.length; x++) {
+        let dot = document.createElement('span');
+        dot.classList.add('dot');
+        nav.appendChild(dot);
+    }
+}
+
+const nextButton = document.getElementById('right-arrow');
+nextButton.addEventListener('click', next)
+
+const prevButton = document.getElementById('left-arrow');
+prevButton.addEventListener('click', previous)
 
 function autoSlide() {
     next()
@@ -53,3 +67,4 @@ function autoSlide() {
 }
 
 autoSlide();
+populateDots();
